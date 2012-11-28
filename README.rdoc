@@ -1,6 +1,8 @@
 
 {<img src="https://secure.travis-ci.org/PanfilovDenis/task_manager.png?branch=master" alt="Build Status" />}[https://travis-ci.org/PanfilovDenis/task_manager]
 
+[http://stormy-fortress-8760.herokuapp.com/]
+
 task manager (прототип pivotaltracker.com PT)
 
 Сущности:
@@ -18,7 +20,7 @@ task manager (прототип pivotaltracker.com PT)
  Требования и рекомендации:
    тестами должны быть покрыты все контроллеры (minitest);
    + база postgresql;
-   вьюхи haml;
+   + вьюхи haml;
    + код под гитом на github;
-   приложение на heroku.com;
+   + приложение на heroku.com;
    для форм simple_form (он может работать с twitter bootstrap из коробки).

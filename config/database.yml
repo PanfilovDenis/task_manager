@@ -43,8 +43,8 @@ test:
   encoding: unicode
   database: task_manager_test
   pool: 5
-  username: task_manager
-  password: user_task_manager
+  username: postgres
+  password:
 
 production:
   adapter: postgresql

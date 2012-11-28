@@ -1,8 +1,6 @@
 
 {<img src="https://secure.travis-ci.org/PanfilovDenis/task_manager.png?branch=master" alt="Build Status" />}[https://travis-ci.org/PanfilovDenis/task_manager]
 
-TODO:
-
 Сущности:
    + user;
    + story;

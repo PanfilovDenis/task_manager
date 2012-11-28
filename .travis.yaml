@@ -1,6 +1,9 @@
 language: ruby
 rvm:
- - "1.9.3"
-script: "bundle exec rake test"
+  - 1.9.3
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate test
 before_script:
- - bundle exec rake db:migrate:reset
+  - psql -c 'create database task_manager_test' -U postgres

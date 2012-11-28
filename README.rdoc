@@ -6,6 +6,7 @@
    + story;
    + story_comment. 
  Функциональность:
+   валидация полей;
    авторизация http://railscasts.com/episodes/270-authentication-in-rails-3-1; 
    создание story, назначение ответственного;
    переход по состояниям: new, started, finished, accepted, rejected (переходы как в PT) https://github.com/pluginaweek/state_machine;

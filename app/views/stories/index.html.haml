@@ -15,7 +15,11 @@
       %td= story.state
       %td= story.user_id
       %td= link_to 'Show', story
-      %td= link_to 'Edit', edit_story_path(story)
-      %td= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
+      - if signed_in?
+        %td= link_to 'Edit', edit_story_path(story)
+        %td= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
+      - else
+        %td
+        %td
 %br/
 = link_to 'New Story', new_story_path

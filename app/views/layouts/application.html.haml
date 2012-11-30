@@ -1,21 +1,22 @@
 !!!
 %html
   %head
-    %title TaskManager
+    %title Менеджер задач
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+
+  #user_nav
+    - if signed_in?
+      Здравствуйте, #{current_user.email}.
+      \#{link_to "Выйти", log_out_path}
+    - else
+      \#{link_to "Зарегистрироваться", sign_up_path}
+      или
+      \#{link_to "Войти", log_in_path}
+
   %body
     = yield
 
-  #user_nav
-    - if current_user
-      Logged in as #{current_user.email}.
-      \#{link_to "Log out", log_out_path}
-    - else
-      = link_to "Sign up", sign_up_path
-      or
-      \#{link_to "log in", log_in_path}
-  
   - flash.each do |name, msg|
     = content_tag :div, msg, :id => "flash_#{name}"

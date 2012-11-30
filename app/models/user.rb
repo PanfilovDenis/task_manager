@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :login, :password
 
   def authenticate(email, password)
-    user = find_by_email(email)
-    if user && user.password == password
+    user = User.find_by_email(email)
+    if user.password == password
       user
     else
       nil

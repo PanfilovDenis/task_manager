@@ -1,6 +1,9 @@
 TaskManager::Application.routes.draw do
-  resources :story_comments
-  resources :stories
+  resources :stories do
+    resources :story_comments
+  end
+  
+
   resources :users
   resource :session, :only => [:new, :create, :destroy]
 

@@ -24,4 +24,11 @@ module SessionsHelper
   	end
   end 
 
+
+  def get_user_name(user_id)
+  	render :text => user_id.inspect
+  	@user = User.find(user_id)
+  	return @user.login
+  end
+
 end

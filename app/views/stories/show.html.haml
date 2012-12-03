@@ -11,6 +11,25 @@
 %p
   %b User:
   = @story.user_id
+
+%h2 Comments:
+- @story.story_comments.each do |story_comment|
+  %p
+  = story_comment.user_id
+  %p
+  = story_comment.comment
+  %p 
+  = link_to 'Destroy Comment', [story_comment.story, story_comment], :method => :delete
+
+%h2 Add comment:
+= form_for([@story, @story.story_comments.build]) do |f|
+  %p
+  = f.label :comment
+  %br
+  = f.text_area :comment
+  %br
+  = f.submit
+
 = link_to 'Edit', edit_story_path(@story)
 |
 \#{link_to 'Back', stories_path}

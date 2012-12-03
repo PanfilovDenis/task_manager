@@ -40,11 +40,14 @@ class StoryCommentsController < ApplicationController
   # POST /story_comments
   # POST /story_comments.json
   def create
-    @story_comment = StoryComment.new(params[:story_comment])
+    @story = Story.find(params[:story_id])
+    @story_comment = @story.story_comments.new(params[:story_comment])
+    @user = current_user
+    @story_comment.user_id = @user.id 
 
     respond_to do |format|
       if @story_comment.save
-        format.html { redirect_to @story_comment, notice: 'Story comment was successfully created.' }
+        format.html { redirect_to story_path(@story), notice: 'Story comment was successfully created.' }
         format.json { render json: @story_comment, status: :created, location: @story_comment }
       else
         format.html { render action: "new" }
@@ -72,11 +75,12 @@ class StoryCommentsController < ApplicationController
   # DELETE /story_comments/1
   # DELETE /story_comments/1.json
   def destroy
-    @story_comment = StoryComment.find(params[:id])
+    @story = Story.find(params[:story_id])
+    @story_comment = @story.story_comments.find(params[:id])
     @story_comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to story_comments_url }
+      format.html { redirect_to story_path(@story) }
       format.json { head :no_content }
     end
   end

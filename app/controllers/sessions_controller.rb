@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
-
+    
   def new
   end
 
- def create
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:email], params[:password])
+  def create
+    form_session_params = params[:session]
+    user = User.find_by_email(form_session_params[:email])
+    if user && user.authenticate(form_session_params[:email], form_session_params[:password])
       sign_in user
       redirect_to root_url, :notice => "Logged in!"
     else

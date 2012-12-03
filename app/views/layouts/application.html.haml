@@ -8,12 +8,12 @@
 
   #user_nav
     - if signed_in?
-      Здравствуйте, #{current_user.email}.
-      \#{link_to "Выйти", log_out_path}
+      Здравствуйте, #{current_user.email}
+      \#{link_to "Выйти", session_path, :method => :delete}
     - else
-      \#{link_to "Зарегистрироваться", sign_up_path}
+      \#{link_to "Зарегистрироваться", new_user_path}
       или
-      \#{link_to "Войти", log_in_path}
+      \#{link_to "Войти", new_session_path}
 
   %body
     = yield

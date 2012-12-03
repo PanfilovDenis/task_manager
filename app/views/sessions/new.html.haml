@@ -1,11 +1,11 @@
 %h1 Форма авторизации
-= form_tag sessions_path do
+= form_for :session, :url => { :action => :create } do |f|  
   %p
-    = label_tag :email
+    = f.label :email
     %br/
-    = text_field_tag :email, params[:email]
+    = f.text_field :email
   %p
-    = label_tag :password
+    = f.label :password
     %br/
-    = password_field_tag :password
-  %p.button= submit_tag "Войти"
+    = f.password_field :password
+  %p.button= f.submit "Войти"

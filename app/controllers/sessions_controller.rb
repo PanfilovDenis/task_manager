@@ -1,14 +1,13 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
 
   def new
   end
 
  def create
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(params[:email], params[:password])
+    user = User.find_by_email(params[:session][:email])
+    if user && user.authenticate(params[:session][:email], params[:session][:password])
       sign_in user
-      redirect_to root_url, :notice => "Logged in!"
+      redirect_to stories_path, :notice => "Logged in!"
     else
       flash.now.alert = "Invalid email or password"
       render "new"

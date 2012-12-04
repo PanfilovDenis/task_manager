@@ -1,4 +1,15 @@
 class StoriesController < ApplicationController
+  
+  def change_state
+    @story = Story.find(params[:story_id])
+    if @story
+      @story.fire_state_event(params[:event])
+      @story.save
+    end
+    redirect_to stories_path
+  end
+
+
   # GET /stories
   # GET /stories.json
   def index

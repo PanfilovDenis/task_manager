@@ -1,13 +1,11 @@
 TaskManager::Application.routes.draw do
   resources :stories do
     resources :story_comments
+    put :change_state
   end
-  
 
   resources :users
   resource :session, :only => [:new, :create, :destroy]
-
-
 
 
   # The priority is based upon order of creation:

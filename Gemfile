@@ -15,6 +15,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'tconsole'
   gem 'haml'
+  gem 'state_machine'
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'heroku'

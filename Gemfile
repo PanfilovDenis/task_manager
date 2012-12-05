@@ -20,8 +20,11 @@ group :assets do
   gem 'ruby_parser'
   gem 'heroku'
   gem 'simple_form'
+  gem 'twitter-bootstrap-rails'
+  gem 'less-rails-bootstrap'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'libv8', '3.11.8.3'
+  gem 'therubyracer', '~> 0.11.0beta5'
 
   gem 'uglifier', '>= 1.0.3'
 end

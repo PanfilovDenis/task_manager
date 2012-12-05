@@ -2,7 +2,7 @@
 %html
   %head
     %title Менеджер задач
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "bootstrap", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
 
@@ -15,8 +15,10 @@
       или
       \#{link_to "Войти", new_session_path}
 
+  - flash.each do |name, msg|
+    = content_tag :div, msg, :id => "flash_#{name}", :class => "alert"
+
   %body
     = yield
 
-  - flash.each do |name, msg|
-    = content_tag :div, msg, :id => "flash_#{name}"
+  

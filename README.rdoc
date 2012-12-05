@@ -11,16 +11,17 @@ task manager (прототип pivotaltracker.com PT):
    + story_comment. 
  Функциональность:
    валидация полей;
+   добавление идентификатора юзверя при создании стори;
    + авторизация http://railscasts.com/episodes/270-authentication-in-rails-3-1; 
    + создание story, назначение ответственного;
-   переход по состояниям: new, started, finished, accepted, rejected (переходы как в PT) https://github.com/pluginaweek/state_machine;
+   + переход по состояниям: new, started, finished, accepted, rejected (переходы как в PT) https://github.com/pluginaweek/state_machine;
    + комментирование тасков;
    просмотр тасков с фильтром по юзерам, по состояниям;
-   дизайн http://twitter.github.com/bootstrap/.
+   + дизайн http://twitter.github.com/bootstrap/.
  Требования и рекомендации:
    тестами должны быть покрыты все контроллеры (minitest);
    + база postgresql;
    + вьюхи haml;
    + код под гитом на github;
    + приложение на heroku.com;
-   для форм simple_form (он может работать с twitter bootstrap из коробки).
+   +для форм simple_form (он может работать с twitter bootstrap из коробки).

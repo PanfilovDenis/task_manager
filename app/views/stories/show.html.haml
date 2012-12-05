@@ -10,9 +10,9 @@
   = @story.state
 %p
   %b User:
-  = @story.user_id
+  = get_user_login(@story.user_id)
 
-- if @story.user_id == current_user.id
+- if author?(@story.user_id)
   = link_to "Начать выполнение", story_change_state_path(@story, event: :start), method: :put if @story.can_start?
   = link_to "Завершить выполнение", story_change_state_path(@story, event: :finish), method: :put if @story.can_finish?
   = link_to "Принять задачу", story_change_state_path(@story, event: :accept), method: :put if @story.can_accept?
@@ -20,23 +20,39 @@
 
 
 %h2 Comments:
-- @story.story_comments.each do |story_comment|
-  %p
-  = story_comment.user_id
-  %p
-  = story_comment.comment
-  %p 
-  = link_to 'Destroy Comment', [story_comment.story, story_comment], :method => :delete
+%table{:border => 1} 
+  %tr
+    %td
+      %strong
+        = :user
+    %td
+      %strong
+        = :comment
+    - if author?(@story.user_id)
+      %td
+  %tr
 
-%h2 Add comment:
-= form_for([@story, @story.story_comments.build]) do |f|
-  %p
-  = f.label :comment
-  %br
-  = f.text_area :comment
-  %br
-  = f.submit
+  - @story.story_comments.each do |story_comment|
+    %tr
+      %td 
+        - user_id = story_comment.user_id
+        = get_user_login(user_id)
+      %td 
+        = story_comment.comment
+      -if author?(@story.user_id)
+        %td
+          = link_to 'Destroy Comment', [story_comment.story, story_comment], :method => :delete
 
-= link_to 'Edit', edit_story_path(@story)
-|
+-if signed_in?
+  %h2 Add comment:
+  = form_for([@story, @story.story_comments.build]) do |f|
+    %p
+    = f.label :comment
+    %br
+    = f.text_area :comment
+    %br
+    = f.submit
+-if author?(@story.user_id)
+  = link_to 'Edit', edit_story_path(@story)
+  |
 \#{link_to 'Back', stories_path}

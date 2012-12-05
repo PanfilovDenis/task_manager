@@ -13,13 +13,14 @@
       %td= story.title
       %td= story.description
       %td= story.state
-      %td= story.user_id
+      %td= get_user_login(story.user_id)
       %td= link_to 'Show', story
-      - if signed_in?
+      - if author?(story.user_id)
         %td= link_to 'Edit', edit_story_path(story)
         %td= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' }
       - else
         %td
         %td
 %br/
-= link_to 'New Story', new_story_path
+- if signed_in?
+  = link_to 'New Story', new_story_path

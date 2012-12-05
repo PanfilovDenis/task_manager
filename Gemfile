@@ -19,6 +19,7 @@ group :assets do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'heroku'
+  gem 'simple_form'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :story
-  has_many :story_comment
+  has_many :story, :dependent => :destroy
+  has_many :story_comment, :dependent => :destroy
+  
   attr_accessible :email, :login, :password
 
   def authenticate(email, password)

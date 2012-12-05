@@ -24,10 +24,17 @@ module SessionsHelper
   	end
   end 
 
-  def get_user_name(user_id)
-  	render :text => user_id.inspect
+  def get_user_login(user_id)
   	@user = User.find(user_id)
   	return @user.login
+  end
+
+  def author?(story_user_id)
+    if (signed_in? && current_user.id == story_user_id)
+      return true
+    else 
+      return false
+    end
   end
 
 end

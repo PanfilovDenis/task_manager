@@ -69,7 +69,6 @@ GEM
       less (~> 2.2.0)
     less-rails-bootstrap (2.2.0)
       less-rails (~> 2.2.0)
-    libv8 (3.11.8.3)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -130,7 +129,7 @@ GEM
       minitest (~> 3.3.0)
       term-ansicolor (~> 1.0.7)
     term-ansicolor (1.0.7)
-    therubyracer (0.11.0)
+    therubyracer (0.11.0beta8)
       ref
     thor (0.16.0)
     tilt (1.3.3)
@@ -156,7 +155,6 @@ DEPENDENCIES
   hpricot
   jquery-rails
   less-rails-bootstrap
-  libv8 (= 3.11.8.3)
   pg
   rails (= 3.2.9)
   ruby_parser
@@ -164,6 +162,6 @@ DEPENDENCIES
   simple_form
   state_machine
   tconsole
-  therubyracer (~> 0.11.0beta5)
+  therubyracer (= 0.11.0beta8)
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

@@ -23,6 +23,7 @@ group :assets do
   gem 'jquery-rails'
   gem 'ransack'
 
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   #gem 'libv8', '3.11.8.3'
   #gem 'therubyracer', '~> 0.11.0beta5'

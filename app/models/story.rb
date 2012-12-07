@@ -10,22 +10,22 @@ class Story < ActiveRecord::Base
   validates :user_id,  :presence => true
 
 
-  state_machine :state, initial: :new do
-    event :start do
-      transition :accepted => :started
-    end
-
-    event :finish do
-      transition all => :finished
-    end
-  
-    event :accept do
-      transition [:new, :rejected] => :accepted
-    end
-
-    event :reject do
-      transition :new => :rejected
-    end
-
-  end  
+#  state_machine :state, initial: :new do
+#    event :start do
+#      transition :accepted => :started
+#    end
+#
+#    event :finish do
+#      transition all => :finished
+#    end
+#  
+#    event :accept do
+#      transition [:new, :rejected] => :accepted
+#    end
+#
+#    event :reject do
+#      transition :new => :rejected
+#    end
+#
+#  end  
 end

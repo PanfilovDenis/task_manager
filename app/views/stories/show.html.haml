@@ -12,11 +12,6 @@
   %b User:
   = get_user_login(@story.user_id)
 
-- if author?(@story.user_id)
-  = link_to "Начать выполнение", story_change_state_path(@story, event: :start), method: :put if @story.can_start?
-  = link_to "Завершить выполнение", story_change_state_path(@story, event: :finish), method: :put if @story.can_finish?
-  = link_to "Принять задачу", story_change_state_path(@story, event: :accept), method: :put if @story.can_accept?
-  = link_to "Отклонить задачу", story_change_state_path(@story, event: :reject), method: :put if @story.can_reject? 
 
 
 %h2 Comments:

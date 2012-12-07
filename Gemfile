@@ -23,7 +23,7 @@ group :assets do
   gem 'jquery-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  #gem 'libv8', '3.11.8.3'
+  # gem 'libv8', '3.11.8.3'
 end
 
 group :test do

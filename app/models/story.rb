@@ -5,7 +5,6 @@ class Story < ActiveRecord::Base
   attr_accessible :description, :state, :title, :user_id
 
   validates :description,  :presence => true
-  validates :state,  :presence => true
   validates :title,  :presence => true, :length => {:minimum => 1, :maximum => 254}
   validates :user_id,  :presence => true
 

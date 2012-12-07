@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'pg'
 gem 'tconsole'
-
+gem 'simple_form'
 
 
 # Gems used only for assets and not required
@@ -18,7 +18,6 @@ group :assets do
   gem 'hpricot'
   gem 'ruby_parser'
   gem 'heroku'
-  gem 'simple_form'
   gem 'twitter-bootstrap-rails'
   gem 'less-rails-bootstrap'
   gem 'jquery-rails'

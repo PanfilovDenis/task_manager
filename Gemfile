@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'pg'
 gem 'tconsole'
-gem 'simple_form'
+
 
 
 # Gems used only for assets and not required
@@ -22,6 +22,7 @@ group :assets do
   gem 'less-rails-bootstrap'
   gem 'jquery-rails'
   gem 'ransack'
+  gem 'simple_form'
 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

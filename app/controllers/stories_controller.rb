@@ -13,13 +13,11 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @q = Story.search(params[:q])
 
-    if params[:q].nil?
       @stories = Story.all
-    else
-      @stories = @q.result(:distinct => true)
-    end
+    
+
+     @stories = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

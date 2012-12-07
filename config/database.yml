@@ -51,5 +51,5 @@ production:
   encoding: unicode
   database: task_manager_production
   pool: 5
-  username: task_manager
-  password: user_task_manager
+  username: postgres
+  password: 

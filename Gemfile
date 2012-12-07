@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails-bootstrap'
 gem 'jquery-rails'
+gem 'ransack'
 
 
 # Gems used only for assets and not required

@@ -1,4 +1,4 @@
 = search_form_for @q do |f|
-  = f.collection_select :user_id_eq, User.all, :id, :email, {}, {:multiple => false}
+  = f.collection_select :user_id_eq, User.all, :id, :login, {}, {:multiple => false}
   = f.collection_select :state_eq, Story.state_machine.states, :name, :name, {}, {:multiple => false}
   = f.submit
